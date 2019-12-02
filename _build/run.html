@@ -1,0 +1,44 @@
+---
+title: |-
+  Running walle-ng
+prev_page:
+  url: /walle.html
+  title: |-
+    Installing walle-ng
+next_page:
+  url: /customize.html
+  title: |-
+    Customizing Runtime
+suffix: .md
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Running-walle-ng-on-Raspberry-Pi">Running walle-ng on Raspberry Pi<a class="anchor-link" href="#Running-walle-ng-on-Raspberry-Pi"> </a></h1><p>For headless installs that implement systemd, apply power and the walle-ng device should automatically start tracking faces and sending notifications. Things to consider if using headless are 1) make sure to have your images set in the <code>dataset</code> directory and 2) to validate the device is running ssh to the Pi and run <code>sudo systemctl status walled</code>. To start and stop the service, issue <code>sudo systemctl stop walled</code> or <code>sudo systemctl start walled</code>.</p>
+<p>For installations that intend on using the Desktop GUI, then starting the application can be done by opening a terminal and executing <code>cd Walle-ng &amp;&amp; python3 wally-ng.py</code>. To quit running the application, place focus on the window that contains the video and press the <code>q</code> button. Things to consider are 1) make sure to have your images set in the <code>dataset</code> directory and 2) you must login to the Pi Desktop in order to view the output of the video stream.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Open a terminal on the Pi Desktop</span>
+<span class="nb">cd</span> ~/Walle-ng
+python3 walle-ng.py
+</pre></div>
+<p>As an alternative to logging into the Pi desktop, you can use SSH on your host computer and run the following commands to view stream:</p>
+<div class="highlight"><pre><span></span><span class="c1"># SSH to the Pi with the -X option to view the steam on your host machine</span>
+ssh -X pi@192.168.198.167
+<span class="nb">cd</span> ~/Walle-ng
+python3 walle-ng.py
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

@@ -1,0 +1,120 @@
+# This file contains the order and numbering for all sections in the book.
+#
+# It is a sample TOC file to help you get started. Fill it out with entries
+# for your own content.
+#
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+#   url: /myurl  # URL of section relative to the /content/ folder.
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   not_numbered: true  # if the section shouldn't have a number in the sidebar
+#     (e.g. Introduction or appendices)
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+#   external: true  # Whether the URL is an external link or points to content in the book
+#
+# Below are some special values that trigger specific behavior:
+# - search: true  # Will provide a link to a search page
+# - divider: true  # Will insert a divider in the sidebar
+# - header: My Header  # Will insert a header with no link in the sidebar
+#
+# See the links below for an example.
+
+# Top-level page
+- title: Home
+  url: /intro
+  not_numbered: true
+
+  # Requirments Page
+- title: Build Requirments
+  url: /requirments
+  not_numbered: true
+
+# Assembly Page
+- title: Assembly
+  url: /assembly
+  not_numbered: true
+
+# AWS Page
+- title: Setting up AWS
+  url: /aws
+  not_numbered: true
+
+# Pi Install Page
+- title: Installing Raspbian
+  url: /raspbian
+  not_numbered: true
+
+# Walle Install Page
+- title: Installing walle-ng
+  url: /walle
+  not_numbered: true
+
+# Walle Run Page
+- title: Running walle-ng
+  url: /run
+  not_numbered: true
+
+# Walle Customize Page
+- title: Customizing Runtime
+  url: /customize
+  not_numbered: true
+
+# Divider for meta-pages and content page
+- divider: true
+
+# External link
+- title: GitHub repository
+  url: https://github.com/af001/walle-ng
+  external: true
+  not_numbered: true
+
+# Adds a searchbar link
+- title: Search
+  #search: true
+  url: /search
+  not_numbered: true
+
+# Divider for meta-pages and content page
+- divider: true
+
+# Add a header and sample content section
+- header: Reference Documents
+
+- title: Installing Raspbian
+  url: https://linuxize.com/post/how-to-install-raspbian-on-raspberry-pi
+  external: true
+  not_numbered: true
+- title: Expanding Filesystem
+  url: https://geek-university.com/raspberry-pi/expand-raspbian-filesystem
+  external: true
+  not_numbered: true
+- title: Enabling SSH
+  url: https://linuxize.com/post/how-to-enable-ssh-on-raspberry-pi
+  external: true
+  not_numbered: true
+- title: Face Recognition Demo
+  url: https://github.com/opencv/open_model_zoo/tree/master/demos/python_demos/face_recognition_demo
+  external: true
+  not_numbered: true
+- title: Getting started with NCS
+  url: https://software.intel.com/en-us/articles/get-started-with-neural-compute-stick
+  external: true
+  not_numbered: true
+- title: GPIO Pinout
+  url: https://maker.pro/raspberry-pi/tutorial/raspberry-pi-4-gpio-pinout
+  external: true
+  not_numbered: true
+- title: API Gateway Documentation
+  url: https://aws.amazon.com/api-gateway/
+  external: true
+  not_numbered: true
+- title: SNS Documentation
+  url: https://aws.amazon.com/sns/
+  external: true
+  not_numbered: true
+- title: Lambda Documentation
+  url: https://aws.amazon.com/sns/
+  external: true
+  not_numbered: true

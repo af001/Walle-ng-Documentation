@@ -1,0 +1,112 @@
+---
+title: |-
+  Customizing Runtime
+prev_page:
+  url: /run.html
+  title: |-
+    Running walle-ng
+next_page:
+  url: 
+  title: |-
+    
+suffix: .md
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Customizing-walle-ng">Customizing walle-ng<a class="anchor-link" href="#Customizing-walle-ng"> </a></h1><p>All settings for walle-ng are set in the <code>config.cfg</code> file located in the config directory. A more detailed explanation of the parameters are as follows:</p>
+<div class="highlight"><pre><span></span><span class="o">[</span>General<span class="o">]</span>
+<span class="c1"># Input video device, default is 0</span>
+<span class="nv">input_video</span>    <span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># Output steam file. This writes the video stream to /tmp and can be read by other applications</span>
+<span class="nv">output_video</span>   <span class="o">=</span>/tmp/output.mpeg
+
+<span class="c1"># Show the video stream in a seperate window on the desktop. Set to False for headless installs.</span>
+<span class="nv">do_output</span>      <span class="o">=</span>True
+
+<span class="c1"># Auto-pause after each frame</span>
+<span class="nv">do_timelapse</span>   <span class="o">=</span>False
+
+<span class="c1"># Crop the input stream to this width</span>
+<span class="nv">crop_width</span>     <span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># Crop the input stream to this height</span>
+<span class="nv">crop_height</span>    <span class="o">=</span><span class="m">0</span>
+
+<span class="c1"># Output log file for debugging</span>
+<span class="nv">log_file</span>       <span class="o">=</span>/home/pi/Walle-ng/walle-ng.log
+
+<span class="o">[</span>Faces<span class="o">]</span>
+<span class="c1"># Path to headshots for performing face identification</span>
+<span class="c1"># Images should be in the format of Name-0.jpg, Name-1.png</span>
+<span class="nv">db_path</span>        <span class="o">=</span>/home/pi/Walle-ng/dataset
+
+<span class="c1"># Use Face Detection model to find faces on the face images, otherwise use full images.</span>
+<span class="nv">do_detector</span>    <span class="o">=</span>False
+
+<span class="o">[</span>Model<span class="o">]</span>
+<span class="c1"># Face detection model path</span>
+<span class="nv">model_fd</span>      <span class="o">=</span>/home/pi/Walle-ng/models/face-detection-retail-0005.xml
+
+<span class="c1"># Landmark regression model path</span>
+<span class="nv">model_ld</span>      <span class="o">=</span>/home/pi/Walle-ng/models/landmarks-regression-retail-0009.xml
+
+<span class="c1"># Face reidentification model path</span>
+<span class="nv">model_rd</span>      <span class="o">=</span>/home/pi/Walle-ng/models/face-reidentification-retail-0095.xml
+
+<span class="o">[</span>Inference<span class="o">]</span>
+<span class="c1"># Inference device, can be [CPU,GPU,FPGA,MYRIAD,HETERO]</span>
+<span class="c1"># To use Movidius, set to MYRIAD</span>
+<span class="nv">device_fd</span>      <span class="o">=</span>MYRIAD
+<span class="nv">device_lm</span>      <span class="o">=</span>MYRIAD
+<span class="nv">device_rd</span>      <span class="o">=</span>MYRIAD
+
+<span class="c1"># Probability threshold for face detections</span>
+<span class="nv">thresh_fd</span>      <span class="o">=</span><span class="m">0</span>.6
+
+<span class="c1"># Cosine distance threshold between two vectors for face identification</span>
+<span class="nv">thresh_rd</span>      <span class="o">=</span><span class="m">0</span>.3
+
+<span class="c1"># Scaling ratio for bboxes passed to face recognition</span>
+<span class="nv">scale_ratio</span>    <span class="o">=</span><span class="m">1</span>.15
+
+<span class="c1"># Show verbose debugging to logs</span>
+<span class="nv">do_verbose</span>     <span class="o">=</span>False
+
+<span class="c1"># Show stats</span>
+<span class="nv">do_stats</span>       <span class="o">=</span>False
+
+<span class="c1"># Allow growing the face database, in addition allow dumping new faces on disk. In that</span>
+<span class="c1"># case the user will be asked if he wants to add a specific image to the images gallery.</span>
+<span class="c1"># The user should specify the name for the image in the open window and press `Enter`.</span>
+<span class="c1"># If it&#39;s not, then press `Escape`. The user may add new images for the same person by</span>
+<span class="c1"># setting the same name in the open window.</span>
+<span class="nv">do_grow</span>        <span class="o">=</span>False
+
+<span class="o">[</span>AWS<span class="o">]</span>
+<span class="c1"># AWS API Gateway endpoint URL. This should point to the POST request URL</span>
+<span class="nv">notify_url</span>     <span class="o">=</span>&lt;api_gateway_endpoint_url&gt;
+
+<span class="c1"># AWS API Gateway API Key</span>
+<span class="nv">api_key</span>        <span class="o">=</span>&lt;api_gateway_api_key&gt;
+
+<span class="c1"># Enable/Disable notifications, True = Enabled</span>
+<span class="nv">do_notify</span>      <span class="o">=</span>True
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
