@@ -25,7 +25,7 @@ Create a subscription to the topic:
 
 ![SNS Subscription](images/sns_subscription.png)
 
-SNS should be set up to send SMS messages to a mobile device. It is recommended to publish a test message to verify setup. In order to publish a test message, perform the following:
+SNS should be set up to send SMS messages to a mobile device. It is recommended to publish a test message to verify setup. In order to publish a test message, perform the following actions:
 
 * In the sidebar, select Topics --> walle-ng-topic
 * Click --> Publish message
@@ -38,7 +38,7 @@ AWS Lambda lets you run code without provisioning or managing servers. It is ser
 
 Lambda --> Create Function --> Select "Author from scratch"
 
-In the Basic information section, set the following:
+In the Basic information section, set the following actions:
 * Function name: walle-ng-lambda
 * Runtime      : Python3.6
 * Role Name    : walle-ng-role
@@ -190,4 +190,4 @@ Set the following values in Deploy API:
 
 Make note of the Invoke URL. This value will be used in the Walle client config. In this example, the Invoke URL is ```https://2szxrk2gh4.execute-api.us-east-1.amazonaws.com/prod```. In order to generate the URL that POST request will be sent to, add ```walle-ng-api``` to the end of the Invoke URL. The final URL for this example would be ```https://2szxrk2gh4.execute-api.us-east-1.amazonaws.com/prod/walle-ng-api```.
 
-Before continuing to the Raspberry Pi installation section, make sure the URL above and the API area available in a notepad. During the walle-ng install, a script will ask for these values to make setup easier. 
+Before continuing to the Raspberry Pi installation section, make sure the endpoint URL and the API key area available in a notepad. During the walle-ng install, a script will ask for these values to make setup easier. 

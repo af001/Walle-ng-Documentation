@@ -19,16 +19,16 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Raspberry-Pi-Installation">Raspberry Pi Installation<a class="anchor-link" href="#Raspberry-Pi-Installation"> </a></h1><p>At this point, the goal is to successfully flash the Raspbian OS to a micro SD card, enable SSH, and expand the filesystem. Once the system is running, project dependencies and tools will be installed to get a working "Walle" device.</p>
-<p>Begin by <strong><a href="https://www.raspberrypi.org/downloads/raspbian/">downloading Raspbian Desktop</a></strong> to your computer. Create a bootable USB drive using <strong><a href="https://unetbootin.github.io/">Unetbootin</a></strong>, <strong><a href="https://www.balena.io/etcher/">BalenaEtcher</a></strong>, or <strong><a href="https://rufus.ie/">Rufus</a></strong> and your micro SD card. For help on this subject, refer to the references section at the bottom of this tutorial. Some flash boot</p>
-<div class="highlight"><pre><span></span><span class="c1"># Alternative download with bash</span>
+<h1 id="Raspberry-Pi-Installation">Raspberry Pi Installation<a class="anchor-link" href="#Raspberry-Pi-Installation"> </a></h1><p>At this point, the goal is to successfully flash Raspbian OS to a micro SD card, enable SSH, and expand the filesystem. Once the system is running, project dependencies and tools will be installed to get a working "walle-ng" device.</p>
+<p>Begin by <strong><a href="https://www.raspberrypi.org/downloads/raspbian/">downloading Raspbian Desktop</a></strong> to your computer. Create a bootable USB drive using <strong><a href="https://unetbootin.github.io/">Unetbootin</a></strong>, <strong><a href="https://www.balena.io/etcher/">BalenaEtcher</a></strong>, or <strong><a href="https://rufus.ie/">Rufus</a></strong> and your micro SD card. For help on this subject, refer to the references section at the bottom of this tutorial.</p>
+<div class="highlight"><pre><span></span><span class="c1"># Alternative download using bash. In a shell, run:</span>
 wget https://downloads.raspberrypi.org/raspbian/images/raspbian-2019-09-30/2019-09-26-raspbian-buster.zip
 shasum -a <span class="m">256</span> <span class="m">2019</span>-09-26-raspbian-buster.zip
 unzip <span class="m">2019</span>-09-26-raspbian-buster.zip
 </pre></div>
 <p>Example using Balena Etcher to flash Raspbian OS to a micro SD card:</p>
 <p><img src="images/flash_balenaetcher.png" alt="Flash"></p>
-<p>Next, re-insert the micro SD card into the computer and add a empty file named 'ssh' onto the boot partition. In Linux, issue <code>lsblk</code> to show the available drives and mount points. Issue <code>touch /media/anton/boot/ssh</code> to create the empty file. Note: This path will be different so it must be modified to reflect the path of the mounted micro SD card on your host machine. Once the file is created, unmount the bootable drive and insert the micro SD card into the Raspberry Pi. Note: If you plan on using a keyboard, mouse, and external monitor, you can skip this step and enable SSH when you login to the Raspberry Pi.</p>
+<p>Next, re-insert the micro SD card into the computer and add a empty file named 'ssh' onto the boot partition. In Linux, issue <code>lsblk</code> to show the available drives and mount points. Issue <code>touch /media/anton/boot/ssh</code> to create the empty file. Note: This path will be different so modify it to reflect the path of the mounted micro SD card on your host machine. Once the file is created, unmount the bootable drive and insert the micro SD card into the Raspberry Pi. Note: If you plan on using a keyboard, mouse, and external monitor, you can skip this step and enable SSH when you login to the Raspberry Pi.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Show partitions (after inserting the micro SD card)</span>
 lsblk
 
@@ -40,12 +40,15 @@ touch /media/anton/boot/ssh
 ls -la /media/anton/boot
 </pre></div>
 <p><img src="images/enable_ssh.png" alt="Enable SSH"></p>
-<p>Apply power and SSH or login to the the Raspberry Pi. If you need a quick way to find the IP address of your Raspberry Pi on your local LAN, use Nmap to locate it. The default password for new images is <code>raspberry</code>.</p>
+<p>Apply power and SSH, or login via the GUI, to the the Raspberry Pi. If you need a quick way to find the IP address of your Raspberry Pi on your local LAN, use Nmap to locate it. The default password for new images is <code>raspberry</code>. It is recommended to change the default password to enhance the security of your Raspberry Pi.</p>
 <div class="highlight"><pre><span></span><span class="c1"># Locate Pi on the network</span>
 sudo nmap -sn <span class="m">192</span>.168.198.0/24 <span class="p">|</span> grep Raspberry -B <span class="m">2</span>
 
 <span class="c1"># SSH to Pi using the password raspberry</span>
 ssh pi@192.168.198.167
+
+<span class="c1"># Change the root password</span>
+passwd
 </pre></div>
 <p>Example of how to use nmap and SSH to the Raspberry Pi:</p>
 <p><img src="images/first_ssh.png" alt="SSH"></p>

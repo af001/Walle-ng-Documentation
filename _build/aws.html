@@ -39,7 +39,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <li>Click --&gt; Create subscription</li>
 </ul>
 <p><img src="images/sns_subscription.png" alt="SNS Subscription"></p>
-<p>SNS should be set up to send SMS messages to a mobile device. It is recommended to publish a test message to verify setup. In order to publish a test message, perform the following:</p>
+<p>SNS should be set up to send SMS messages to a mobile device. It is recommended to publish a test message to verify setup. In order to publish a test message, perform the following actions:</p>
 <ul>
 <li>In the sidebar, select Topics --&gt; walle-ng-topic</li>
 <li>Click --&gt; Publish message</li>
@@ -49,7 +49,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </ul>
 <h2 id="AWS-Lambda">AWS Lambda<a class="anchor-link" href="#AWS-Lambda"> </a></h2><p>AWS Lambda lets you run code without provisioning or managing servers. It is serverless, and will only run when a a POST request is made to API Gateway. Lambda will be responsible for parsing POST requests from walle-ng and publishing SNS messages. In AWS console, go to Lambda and perform the following actions:</p>
 <p>Lambda --&gt; Create Function --&gt; Select "Author from scratch"</p>
-<p>In the Basic information section, set the following:</p>
+<p>In the Basic information section, set the following actions:</p>
 <ul>
 <li>Function name: walle-ng-lambda</li>
 <li>Runtime      : Python3.6</li>
@@ -189,7 +189,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <li>Click --&gt; Deploy</li>
 </ul>
 <p>Make note of the Invoke URL. This value will be used in the Walle client config. In this example, the Invoke URL is <code>https://2szxrk2gh4.execute-api.us-east-1.amazonaws.com/prod</code>. In order to generate the URL that POST request will be sent to, add <code>walle-ng-api</code> to the end of the Invoke URL. The final URL for this example would be <code>https://2szxrk2gh4.execute-api.us-east-1.amazonaws.com/prod/walle-ng-api</code>.</p>
-<p>Before continuing to the Raspberry Pi installation section, make sure the URL above and the API area available in a notepad. During the walle-ng install, a script will ask for these values to make setup easier.</p>
+<p>Before continuing to the Raspberry Pi installation section, make sure the endpoint URL and the API key area available in a notepad. During the walle-ng install, a script will ask for these values to make setup easier.</p>
 
 </div>
 </div>
