@@ -12,7 +12,7 @@ Set the following settings:
 * Display name: Alert
 * Click --> Create topic
 
-Once the topic is created, a view similar to the image below should be visible. Copy down the ARN associated with the walle-sns-topic. In this example, it is ```arn:aws:sns:us-east-1:846787677672:walle-ng-topic```.
+Once the topic is created, a view similar to the image below should be visible. Copy down the ARN associated with the walle-sns-topic. In this example, it is ```arn:aws:sns:us-east-1:646789677679:walle-ng-topic```.
 
 ![SNS Topic](images/sns_topic.png)
 
@@ -47,7 +47,7 @@ In the Basic information section, set the following actions:
 
 ![Create Lambda](images/lambda_create.png)
 
-Once the Lambda function is created, scroll down to the ```Function code``` section and copy/paste the code below into the ```lambda_function.py``` script. Under ```TOPIC_ARN_SMS```, change the value ```<sns_topic_arn>``` to the ARN you noted when you created the ```walle-ng-topic```. For this example, ```<sns_topic_arn>``` would be changed to ```arn:aws:sns:us-east-1:846787677672:walle-ng-topic```. 
+Once the Lambda function is created, scroll down to the ```Function code``` section and copy/paste the code below into the ```lambda_function.py``` script. Under ```TOPIC_ARN_SMS```, change the value ```<sns_topic_arn>``` to the ARN you noted when you created the ```walle-ng-topic```. For this example, ```<sns_topic_arn>``` would be changed to ```arn:aws:sns:us-east-1:646789677679:walle-ng-topic```. 
 
 When done, click --> Save. 
 
